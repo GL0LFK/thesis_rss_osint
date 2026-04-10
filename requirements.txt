@@ -1,0 +1,8 @@
+mail-parser
+matplotlib
+networkx
+numpy
+pandas
+python-dateutil
+PyYAML
+scipy

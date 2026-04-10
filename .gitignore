@@ -1,0 +1,25 @@
+# Ignore all dataset, intermediate, processed, and dictionary files
+/data/
+
+# Python cache / virtual env
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Packaging
+*.egg-info/
+dist/
+build/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# src
+/src/stage5_charts_extra_v11.py
+
