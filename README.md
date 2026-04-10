@@ -1,6 +1,6 @@
-# Defence Against OSINT-Based Spear-Phishing Attacks — A Relationship Trust Scoring Approach
+# Defence Against OSINT-Based Spear-Phishing Attacks - A Relationship Trust Scoring Approach
 
-> **B.Sc. Thesis — Milton Friedman University**
+> **B.Sc. Thesis - Milton Friedman University**
 > Zsolt Drobina, 2026
 
 This repository contains the implementation of the five-stage pipeline architecture: **Parse → Build → Score → Inject → Evaluate**.
@@ -11,7 +11,7 @@ This repository contains the implementation of the five-stage pipeline architect
 
 ## Releases
 
-- **v1.0** — [Download ZIP](https://github.com/GL0LFK/thesis_rss_osint/archive/refs/tags/v1.0.zip)
+- **v1.0** - [Download ZIP](https://github.com/GL0LFK/thesis_rss_osint/archive/refs/tags/v1.0.zip)
 ---
 
 ## File Descriptions
@@ -20,13 +20,13 @@ This repository contains the implementation of the five-stage pipeline architect
 |---|---|
 | `config.py` | Central path configuration; defines `BASE_PATH` and all data sub-folder / artefact paths used by every stage. |
 | `utils.py` | Shared stateless helper functions: `normalise_address()` for lowercase/strip and `strip_tzinfo()` to make datetimes timezone-naive. |
-| `stage1_parse.py` | **Stage 1** — Walks the raw Enron maildir tree, parses each email with `mail-parser`, normalises addresses, deduplicates by Message-ID, expands multi-recipient messages, drops self-loops, and writes `enron_parsed.csv`. |
-| `stage2_build.py` | **Stage 2** — Reads `enron_parsed.csv`, aggregates sender→recipient message counts into a directed weighted NetworkX graph with per-edge timestamp lists, asserts zero self-loops, computes graph statistics, and serialises `graph.graphml`. |
-| `stage3_score.py` | **Stage 3** — Loads `graph.graphml`, computes six sub-scores (trust degree, reciprocity, interaction average, response time, clustering coefficient, betweenness centrality) per directed edge, and writes the composite RSS to `score_table.csv`. |
-| `stage4_inject.py` | **Stage 4** — Reads `score_table.csv` and OSINT-level configs, injects synthetic spear-phishing rows at three OSINT levels (Low, Medium, High) with deterministic RNGs, and writes the labelled `evaluation_set.csv`. |
-| `stage5_evaluate.py` | **Stage 5** — Runs the full evaluation pipeline: splits data into validation/test sets, sweeps τ on validation, then evaluates Methods A (RSS), B (Header Auth), and C (Hybrid) with TPR / FPR / F1 / AUC-ROC metrics and statistical tests. |
-| `stage5_analysis_high.py` | **Stage 5 supplement** — Performs a deep-dive on High-OSINT test-set rows, merges sub-scores from the score table, and produces `high_osint_subscore_profile.csv` and `tau_tradeoff_table.csv`. |
-| `stage5_charts_extra_v11.py` | **Stage 5 supplement** — Generates all thesis charts (degree CCDF, ROC curve, TPR/F1 bar charts, RSS distributions, confusion matrices, τ sweep, detection outcomes) as PNG files. |
+| `stage1_parse.py` | **Stage 1** - Walks the raw Enron maildir tree, parses each email with `mail-parser`, normalises addresses, deduplicates by Message-ID, expands multi-recipient messages, drops self-loops, and writes `enron_parsed.csv`. |
+| `stage2_build.py` | **Stage 2** - Reads `enron_parsed.csv`, aggregates sender→recipient message counts into a directed weighted NetworkX graph with per-edge timestamp lists, asserts zero self-loops, computes graph statistics, and serialises `graph.graphml`. |
+| `stage3_score.py` | **Stage 3** - Loads `graph.graphml`, computes six sub-scores (trust degree, reciprocity, interaction average, response time, clustering coefficient, betweenness centrality) per directed edge, and writes the composite RSS to `score_table.csv`. |
+| `stage4_inject.py` | **Stage 4** - Reads `score_table.csv` and OSINT-level configs, injects synthetic spear-phishing rows at three OSINT levels (Low, Medium, High) with deterministic RNGs, and writes the labelled `evaluation_set.csv`. |
+| `stage5_evaluate.py` | **Stage 5** - Runs the full evaluation pipeline: splits data into validation/test sets, sweeps τ on validation, then evaluates Methods A (RSS), B (Header Auth), and C (Hybrid) with TPR / FPR / F1 / AUC-ROC metrics and statistical tests. |
+| `stage5_analysis_high.py` | **Stage 5 supplement** - Performs a deep-dive on High-OSINT test-set rows, merges sub-scores from the score table, and produces `high_osint_subscore_profile.csv` and `tau_tradeoff_table.csv`. |
+| `stage5_charts_extra_v11.py` | **Stage 5 supplement** - Generates all thesis charts (degree CCDF, ROC curve, TPR/F1 bar charts, RSS distributions, confusion matrices, τ sweep, detection outcomes) as PNG files. |
 | `edge_diagnostic.py` | Diagnostic utility that inspects individual graph edges and prints debug information for troubleshooting score calculations. |
 | `graph_viewer_generator.py` | Generates the interactive HTML graph viewer from `graph.graphml` using igraph + sigma.js. |
 | `Thesis_Enron_dir_w_graph.html` | Interactive HTML visualisation of the full Enron communication graph for exploratory analysis. |
@@ -69,7 +69,7 @@ This repository contains the implementation of the five-stage pipeline architect
 
 ## Graph Viewer
 
-Explore the constructed Enron communication graph in your browser — open `Thesis_Enron_dir_w_graph.html`.
+Explore the constructed Enron communication graph in your browser - open `Thesis_Enron_dir_w_graph.html`.
 
 <p align="center"><img src="img/graph1.png" alt="Graph Viewer UI"></p>
 <p align="center"><img src="img/graph2.png" alt="Selected Node"></p>
@@ -92,4 +92,4 @@ Explore the constructed Enron communication graph in your browser — open `Thes
 
 This project is licensed under the [MIT License](LICENSE).
 
-© 2026 Zsolt Drobina — [Milton Friedman University](https://uni-milton.hu/)
+© 2026 Zsolt Drobina - [Milton Friedman University](https://uni-milton.hu/)
