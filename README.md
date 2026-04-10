@@ -11,6 +11,7 @@ This repository contains the implementation of the five-stage pipeline architect
 
 ## Releases
 
+- **v1.0** — [Download ZIP](https://github.com/GL0LFK/thesis_rss_osint/archive/refs/tags/v1.0.zip)
 ---
 
 ## File Descriptions
