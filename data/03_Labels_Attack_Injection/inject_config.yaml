@@ -1,0 +1,8 @@
+# Global injection configuration for Stage 4 (Inject)
+# Related Thesis Section: 3.5.1 (Stage 4 Inject: Injection Methodology)
+
+random_seed: 42
+
+injection:
+  spear_phish_ratio: 0.001   # 0.1% of evaluation_set size
+  per_level_equal: true

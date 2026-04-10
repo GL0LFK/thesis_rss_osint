@@ -1,6 +1,3 @@
-# Ignore all dataset, intermediate, processed, and dictionary files
-/data/
-
 # Python cache / virtual env
 __pycache__/
 *.py[cod]
@@ -20,6 +17,11 @@ build/
 .DS_Store
 Thumbs.db
 
-# src
-/src/stage5_charts_extra_v11.py
-
+# Large data files (reproducible via pipeline)
+data/00_Raw/
+data/01_Interim/
+data/02_Processed/graph.graphml
+data/02_Processed/evaluation_set.csv
+data/02_Processed/score_table.csv
+data/02_Processed/*.log
+Thesis_Enron_dir_w_graph.html

@@ -1,0 +1,3 @@
+comparison,ttest_stat,ttest_p,mcnemar_stat,mcnemar_p,mcnemar_method,n_discordant
+C_Hybrid_vs_A_RSS,,,0.0,1.0,none,0
+C_Hybrid_vs_B_Auth,5.303766,0.0,28.125,0.0,chi2,32

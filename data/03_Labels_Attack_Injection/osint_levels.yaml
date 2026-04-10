@@ -1,0 +1,28 @@
+# OSINT level configuration for Stage 4 (Inject)
+# This file is fully deterministic and corpus-agnostic.
+# Related Thesis Section: 3.5.2 (OSINT Preparedness Levels)
+
+osint_levels:
+  low:
+    description: "Low OSINT attacker, unknown external sender with no historical relationship."
+    sender_type: "external_unknown"
+    display_name_strategy: "random_personal_name"
+    domain_strategy: "random_free_mail_provider"
+    localpart_strategy: "random_string"
+    header_auth_pass: false
+
+  medium:
+    description: "Medium OSINT attacker, impersonates a known Enron employee but uses a non-Enron domain."
+    sender_type: "impersonated_employee"
+    display_name_strategy: "real_employee_name"
+    domain_strategy: "lookalike_or_free_mail_provider"
+    localpart_strategy: "based_on_employee_alias"
+    header_auth_pass: false
+
+  high:
+    description: "High OSINT attacker, impersonates a trusted external contact with a realistic domain."
+    sender_type: "impersonated_external_contact"
+    display_name_strategy: "real_external_name"
+    domain_strategy: "lookalike_or_registered_domain"
+    localpart_strategy: "based_on_observed_pattern"
+    header_auth_pass: true
